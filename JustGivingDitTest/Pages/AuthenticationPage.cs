@@ -29,7 +29,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="password">String</param>
         public void enterPassword(String password)
         {
-            Password.SendKeys(password);
+            TypeInElement(Password, password);
         }
     }
 }

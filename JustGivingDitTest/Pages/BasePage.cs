@@ -296,7 +296,13 @@ namespace JustGivingDitTest.Pages
         /// </summary>
         public void pageDisplayed()
         {
-            Assert.True(isElementVisible(this.webDriver.FindElement(this.pageIdentifier)), "Section is not visible, using selector %s", this.pageIdentifier);
+            Assert.True(isElementVisible(this.webDriver.FindElement(this.pageIdentifier)), "Section is not visible, using selector {0}", this.pageIdentifier);
+        }
+
+        public void TypeInElement(IWebElement element, string keys)
+        {
+            Assert.True(isElementVisible(element), "Element isn't visible {0}", element);
+            element.SendKeys(keys);
         }
     }
 }

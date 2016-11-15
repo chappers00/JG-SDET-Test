@@ -37,6 +37,7 @@ namespace JustGivingDitTest.Pages
         [FindsBy(How = How.Id, Using = "MessageAndAmount_Amount")]
         public IWebElement CurrencyAmount { get; set; }
 
+
         /// <summary>
         /// Navigate to the homepage specified in url
         /// </summary>
@@ -62,7 +63,7 @@ namespace JustGivingDitTest.Pages
         {
             //TODO: Validate the input
             CurrencyAmount.Clear();
-            CurrencyAmount.SendKeys(currencyAmount);
+            TypeInElement(CurrencyAmount, currencyAmount);
             CurrencyAmount.SendKeys(Keys.Tab);
         }
     }

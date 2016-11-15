@@ -28,15 +28,19 @@ namespace JustGivingDitTest.Pages
         [FindsBy(How = How.Id, Using = "heading-title")]
         public IWebElement PageHeading { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "awesome-continue-button")]
-        public IWebElement ContinueButton { get; set; }
+        public static By ContinueButtonSelector = By.CssSelector(".awesome-continue-button");
 
         /// <summary>
         /// Locate and press the continue button
         /// </summary>
         public void Continue()
         {
-            ContinueButton.SendKeys(Keys.Enter);
+            var buttons = this.driver.FindElements(ContinueButtonSelector);
+            foreach (var b in buttons)
+            {
+                if(b.Displayed) {b.SendKeys(Keys.Enter); break; }
+            }
+            
         }
 
         /// <summary>

@@ -15,6 +15,8 @@ namespace JustGivingDitTest.Steps
         IdentityPage ip = new IdentityPage(WebDriver);
         AuthenticationPage ap = new AuthenticationPage(WebDriver);
         PaymentPage pp = new PaymentPage(WebDriver);
+        PaymentBillingPage bp = new PaymentBillingPage(WebDriver);
+        ReviewPage rp = new ReviewPage(WebDriver);
 
         [Given(@"I have the home page open")]
         public void GivenIHaveTheHomePageOpen()
@@ -58,6 +60,18 @@ namespace JustGivingDitTest.Steps
                 case "Identity":
                     ip.pageDisplayed();
                     break;
+                case "Authentication":
+                    ap.pageDisplayed();
+                    break;
+                case "Payment":
+                    pp.pageDisplayed();
+                    break;
+                case "Payment_BillingAddress":
+                    bp.pageDisplayed();
+                    break;
+                case "ReviewAndDonate":
+                    rp.pageDisplayed();
+                    break;
                 default:
                     throw new KeyNotFoundException(string.Format("Don't have a method for this section {0}", p0));
             }
@@ -89,6 +103,23 @@ namespace JustGivingDitTest.Steps
         {
             pp.enterPaymentDetails(p0, p1, p2, p3, p4);
         }
+
+        /// <summary>
+        /// This method is pretty horrendous, with more time I would do something a bit more elegant:
+        /// Either craft some different steps for options with/without the optional address fields
+        /// Or enforce the feature file to have 'null's for fields it doesn't use.
+        /// </summary>
+        /// <param name="line1"></param>
+        /// <param name="line2"></param>
+        /// <param name="town"></param>
+        /// <param name="country"></param>
+        /// <param name="postcode"></param>
+        [When(@"I enter billing details of '([^,]+), ([^,]+), ([^,]+), ([^,]+), ([^,]+)'")]
+        public void WhenIEnterBillingDetailsOf(string line1, string line2, string town, string postcode, string country)
+        {
+            bp.enterAddressDetails(country, "", line1, line2, town, "", postcode);
+        }
+
 
     }
 }

@@ -69,9 +69,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="address">String</param>
         public void enterEmailAddress(String address)
         {
-            EmailAddress.SendKeys(address);
+            TypeInElement(EmailAddress, address);
         }
-
-
     }
 }

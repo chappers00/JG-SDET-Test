@@ -39,10 +39,10 @@ namespace JustGivingDitTest.Pages
         public void enterPaymentDetails(string cardType, string cardNumber, string expMonth, string expYear, string nameOnCard)
         {
             new SelectElement(CardType).SelectByText(cardType);
-            CardNumber.SendKeys(cardNumber);
+            TypeInElement(CardNumber, cardNumber);
             new SelectElement(ExpiryMonth).SelectByText(expMonth);
             new SelectElement(ExpiryYear).SelectByText(expYear);
-            NameOnCard.SendKeys(nameOnCard);
+            TypeInElement(NameOnCard, nameOnCard);
         }
     }
 }

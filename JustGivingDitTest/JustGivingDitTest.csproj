@@ -74,6 +74,8 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\IBasePage.cs" />
     <Compile Include="Pages\AuthenticationPage.cs" />
+    <Compile Include="Pages\PaymentBillingPage.cs" />
+    <Compile Include="Pages\ReviewPage.cs" />
     <Compile Include="Pages\PaymentPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Features\GiveLoadsOfMoney.feature.cs">
