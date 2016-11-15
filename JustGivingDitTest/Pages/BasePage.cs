@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Interactions;
 using JustGivingDitTest.Utils;
 using OpenQA.Selenium.Support.UI;
+using NUnit.Framework;
 
 namespace JustGivingDitTest.Pages
 {
@@ -19,6 +20,11 @@ namespace JustGivingDitTest.Pages
         /// The default time to wait for elements to be present
         /// </summary>
         public int defaultWait = 5;
+
+        /// <summary>
+        /// Used by the isSectionDisplayedMethod to work out if a section is displayed
+        /// </summary>
+        private By pageIdentifier;
 
         /// <summary>
         /// The web driver
@@ -42,20 +48,20 @@ namespace JustGivingDitTest.Pages
         /// <value>The URL.</value>
         public virtual string CurrentUrl { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BasePage"/> class.
-        /// </summary>
         public BasePage()
         {
         }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BasePage"/> class.
         /// </summary>
         /// <param name="WebDriver">The web driver.</param>
-        public BasePage(OpenQA.Selenium.IWebDriver WebDriver)
+        /// <param name="Selector">A way of knowing if the right page is shown</param>
+        public BasePage(OpenQA.Selenium.IWebDriver WebDriver, By Selector)
         {
             this.WebDriver = WebDriver;
             this.actions = new Actions(WebDriver);
+            this.pageIdentifier = Selector;
         }
         /// <summary>
         /// Gets the element.
@@ -283,6 +289,14 @@ namespace JustGivingDitTest.Pages
                 --times;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Asserts that this page is displayed
+        /// </summary>
+        public void pageDisplayed()
+        {
+            Assert.True(isElementVisible(this.webDriver.FindElement(this.pageIdentifier)), "Section is not visible, using selector %s", this.pageIdentifier);
         }
     }
 }

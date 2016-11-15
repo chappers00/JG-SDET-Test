@@ -18,13 +18,13 @@ namespace JustGivingDitTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [TechTalk.SpecRun.FeatureAttribute("Make some donations", Description="As a really good interview candidate\r\nI want to make lots of donations to the tes" +
-        "t charity\r\nSo that you guys give me the job", SourceFile="Features\\SpecFlowFeature1.feature", SourceLine=0)]
+        "t charity\r\nSo that you guys give me the job", SourceFile="Features\\GiveLoadsOfMoney.feature", SourceLine=0)]
     public partial class MakeSomeDonationsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SpecFlowFeature1.feature"
+#line 1 "GiveLoadsOfMoney.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
@@ -63,83 +63,78 @@ namespace JustGivingDitTest.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Open the donation page, validate header", SourceLine=5)]
-        public virtual void OpenTheDonationPageValidateHeader()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open the donation page, validate header", ((string[])(null)));
 #line 6
-this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.Then("the \'Donate\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.And("the header should be \'Donate to The Demo Charity 2 (JustGiving Demo)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the header should be \'Donate to The Demo Charity (JustGiving Demo)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Make a 30 pound donation", new string[] {
-                "selenium"}, SourceLine=11)]
+        [TechTalk.SpecRun.ScenarioAttribute("Make a 30 pound donation", SourceLine=10)]
         public virtual void MakeA30PoundDonation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a 30 pound donation", new string[] {
-                        "selenium"});
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a 30 pound donation", ((string[])(null)));
+#line 11
 this.ScenarioSetup(scenarioInfo);
-#line 13
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
+#line 6
+this.FeatureBackground();
+#line 12
  testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 13
  testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
+#line 14
  testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
                     "of \'£30\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Change currency to euros", SourceLine=17)]
+        [TechTalk.SpecRun.ScenarioAttribute("Change currency to euros", SourceLine=15)]
         public virtual void ChangeCurrencyToEuros()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change currency to euros", ((string[])(null)));
-#line 18
+#line 16
 this.ScenarioSetup(scenarioInfo);
-#line 19
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.And("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 6
+this.FeatureBackground();
+#line 17
+ testRunner.Given("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
  testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 19
  testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 20
  testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
                     "of \'€30\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Make a twenty euro donation", SourceLine=24)]
+        [TechTalk.SpecRun.ScenarioAttribute("Make a twenty euro donation", SourceLine=21)]
         public virtual void MakeATwentyEuroDonation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a twenty euro donation", ((string[])(null)));
-#line 25
+#line 22
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 23
+ testRunner.Given("I have entered an amount of \'20\' \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.Then("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
+                    "of \'€20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("I enter an email address of \'hire@me.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I enter a password of \'hireme\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("I have entered an amount of \'20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.And("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 31
- testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
-                    "of \'€20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I pay with a \'Visa Credit Card\' with number \'4111-1111-1111-1111\' expiry \'01\' \'20" +
+                    "20\' and name \'My Name\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -160,7 +155,7 @@ this.ScenarioSetup(scenarioInfo);
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SpecFlowFeature1.feature"
+#line 1 "GiveLoadsOfMoney.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
@@ -200,39 +195,32 @@ this.ScenarioSetup(scenarioInfo);
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Open the donation page, validate header")]
-        public virtual void OpenTheDonationPageValidateHeader()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open the donation page, validate header", ((string[])(null)));
 #line 6
-this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.Then("the \'Donate\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.And("the header should be \'Donate to The Demo Charity 2 (JustGiving Demo)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the header should be \'Donate to The Demo Charity (JustGiving Demo)\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Make a 30 pound donation")]
-        [NUnit.Framework.CategoryAttribute("selenium")]
         public virtual void MakeA30PoundDonation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a 30 pound donation", new string[] {
-                        "selenium"});
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a 30 pound donation", ((string[])(null)));
+#line 11
 this.ScenarioSetup(scenarioInfo);
-#line 13
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
+#line 6
+this.FeatureBackground();
+#line 12
  testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 13
  testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 16
+#line 14
  testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
                     "of \'£30\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -244,17 +232,17 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ChangeCurrencyToEuros()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change currency to euros", ((string[])(null)));
-#line 18
+#line 16
 this.ScenarioSetup(scenarioInfo);
-#line 19
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.And("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 6
+this.FeatureBackground();
+#line 17
+ testRunner.Given("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
  testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 19
  testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 20
  testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
                     "of \'€30\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -266,21 +254,22 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void MakeATwentyEuroDonation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make a twenty euro donation", ((string[])(null)));
-#line 25
+#line 22
 this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 23
+ testRunner.Given("I have entered an amount of \'20\' \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.Then("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
+                    "of \'€20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("I enter an email address of \'hire@me.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
- testRunner.Given("I have the home page open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I enter a password of \'hireme\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
- testRunner.And("I have entered an amount of \'20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.And("I have changed currency to \'EUR\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.When("I press the continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.Then("the \'Identity\' section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 31
- testRunner.And("a donation by \'Anonymous\' is created with a message of \'(no message)\' and amount " +
-                    "of \'€20\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I pay with a \'Visa Credit Card\' with number \'4111-1111-1111-1111\' expiry \'01\' \'20" +
+                    "20\' and name \'My Name\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

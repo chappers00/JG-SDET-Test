@@ -4,30 +4,23 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JustGivingDitTest.Pages
 {
-    class MessageAndAmountPage : BasePage
+    class HomePage : BasePage
     {
         private readonly IWebDriver driver;
         private readonly Actions actions;
         private readonly string url = @"https://www.justgiving.com/4w350m3/donation/direct/charity/2050";
 
-        public MessageAndAmountPage(IWebDriver browser)
+        private static By SectionIdentifier = By.Id("MessageAndAmount");
+
+        public HomePage(IWebDriver browser) : base(browser, SectionIdentifier)
         {
             this.driver = browser;
             this.actions = new Actions(browser);
             PageFactory.InitElements(browser, this);
         }
-        [FindsBy(How = How.Id, Using = "Identity")]
-        public IWebElement IdentitySection { get; set; }
-
-        [FindsBy(How = How.Id, Using = "MessageAndAmount")]
-        public IWebElement DonateSection { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "donation-message")]
         public IWebElement DonationMessage { get; set; }
@@ -44,37 +37,33 @@ namespace JustGivingDitTest.Pages
         [FindsBy(How = How.Id, Using = "MessageAndAmount_Amount")]
         public IWebElement CurrencyAmount { get; set; }
 
+        /// <summary>
+        /// Navigate to the homepage specified in url
+        /// </summary>
         public void Navigate()
         {
             this.driver.Navigate().GoToUrl(this.url);
         }
 
+        /// <summary>
+        /// Selects one of the currencies provided
+        /// </summary>
+        /// <param name="currencyCode">One of the three-letter currency codes in the amount dropdown (GBP/EUR/USD etc)</param>
         public void selectCurrency(String currencyCode)
         {
             new SelectElement(CurrencySelector).SelectByText(currencyCode);
         }
 
+        /// <summary>
+        /// Type in an amount into the currency option
+        /// </summary>
+        /// <param name="currencyAmount">String</param>
         public void enterAmount(String currencyAmount)
         {
+            //TODO: Validate the input
             CurrencyAmount.Clear();
             CurrencyAmount.SendKeys(currencyAmount);
             CurrencyAmount.SendKeys(Keys.Tab);
-        }
-
-        public void validateDonator(String donator)
-        {
-            var donationElement = this.DonationSponsorName;
-            Assert.AreEqual("Your name:\r\n"+donator, this.DonationSponsorName.Text, "Donation sponsor doesn't match expected");
-        }
-
-        public void validateMessage(String message)
-        {
-            Assert.AreEqual("Your message:\r\n"+message, this.DonationMessage.Text, "Donation message doesn't match expected");
-        }
-
-        public void validateAmount(String amount)
-        {
-            Assert.AreEqual("Donation amount:\r\n"+amount, this.DonationAmount.Text, "Donation amount doesn't match expected");
         }
     }
 }

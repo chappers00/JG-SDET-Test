@@ -5,6 +5,7 @@ using System.Text;
 
 namespace JustGivingDitTest.Utils
 {
+    [Serializable]
     public class SpecFlowSeleniumException : Exception
     {
 

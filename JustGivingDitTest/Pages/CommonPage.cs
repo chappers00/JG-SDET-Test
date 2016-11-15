@@ -36,7 +36,7 @@ namespace JustGivingDitTest.Pages
         /// </summary>
         public void Continue()
         {
-            this.ContinueButton.SendKeys(Keys.Enter);
+            ContinueButton.SendKeys(Keys.Enter);
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="header">The expected page header</param>
         public void validateHeader(String header)
         {
-            Assert.AreEqual(header, this.PageHeading.Text, "Page heading doesn't match expected");
+            Assert.AreEqual(header, PageHeading.Text, "Page heading doesn't match expected");
         }
     }
 }
