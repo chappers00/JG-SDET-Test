@@ -44,8 +44,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="donator">String</param>
         public void validateDonator(String donator)
         {
-            var donationElement = this.DonationSponsorName;
-            Assert.AreEqual("Your name:\r\n"+donator, DonationSponsorName.Text, "Donation sponsor doesn't match expected");
+            Assert.True(DonationSponsorName.Text.Contains(donator), "Donation sponsor {0} doesn't contain expected value {1}", DonationSponsorName.Text, donator);
         }
 
         /// <summary>
@@ -54,7 +53,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="message">String</param>
         public void validateMessage(String message)
         {
-            Assert.AreEqual("Your message:\r\n"+message, DonationMessage.Text, "Donation message doesn't match expected");
+            Assert.True(DonationMessage.Text.Contains(message), "Donation message {0} doesn't contain expected value {1}", DonationMessage.Text, message);
         }
 
         /// <summary>
@@ -63,7 +62,7 @@ namespace JustGivingDitTest.Pages
         /// <param name="amount">String (include the currency symbol)</param>
         public void validateAmount(String amount)
         {
-            Assert.AreEqual("Donation amount:\r\n"+amount, DonationAmount.Text, "Donation amount doesn't match expected");
+            Assert.True(DonationAmount.Text.Contains(amount), "Donation amount {0} doesn't contain expected value {1}", DonationAmount.Text, amount);
         }
 
         /// <summary>

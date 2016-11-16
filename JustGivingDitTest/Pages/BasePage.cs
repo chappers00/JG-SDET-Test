@@ -300,7 +300,7 @@ namespace JustGivingDitTest.Pages
         }
 
         /// <summary>
-        /// Wrapper method to give the element an oppertunity to load before trying to type into it.
+        /// Wrapper method to give the element an opportunity to load before trying to type into it.
         /// </summary>
         /// <param name="element">The element to wait for / type into</param>
         /// <param name="keys">The string to send</param>

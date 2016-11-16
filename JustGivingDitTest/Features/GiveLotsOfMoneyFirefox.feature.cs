@@ -17,22 +17,22 @@ namespace JustGivingDitTest.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Make some donations", new string[] {
+    [TechTalk.SpecRun.FeatureAttribute("Make some donations using the firefox browser", new string[] {
             "firefox"}, Description="\tAs a great prospective Lead SDET\r\n\tI want to make lots of donations to the test " +
-        "charity\r\n\tSo that you guys give me the job", SourceFile="Features\\GiveLotsOfMoney.feature", SourceLine=1)]
-    public partial class MakeSomeDonationsFeature
+        "charity\r\n\tSo that you guys give me the job", SourceFile="Features\\GiveLotsOfMoneyFirefox.feature", SourceLine=1)]
+    public partial class MakeSomeDonationsUsingTheFirefoxBrowserFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GiveLotsOfMoney.feature"
+#line 1 "GiveLotsOfMoneyFirefox.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Make some donations", "\tAs a great prospective Lead SDET\r\n\tI want to make lots of donations to the test " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Make some donations using the firefox browser", "\tAs a great prospective Lead SDET\r\n\tI want to make lots of donations to the test " +
                     "charity\r\n\tSo that you guys give me the job", ProgrammingLanguage.CSharp, new string[] {
                         "firefox"});
             testRunner.OnFeatureStart(featureInfo);
@@ -116,21 +116,21 @@ this.FeatureBackground();
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Make some donations")]
+    [NUnit.Framework.DescriptionAttribute("Make some donations using the firefox browser")]
     [NUnit.Framework.CategoryAttribute("firefox")]
-    public partial class MakeSomeDonationsFeature_NUnit
+    public partial class MakeSomeDonationsUsingTheFirefoxBrowserFeature_NUnit
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GiveLotsOfMoney.feature"
+#line 1 "GiveLotsOfMoneyFirefox.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Make some donations", "\tAs a great prospective Lead SDET\r\n\tI want to make lots of donations to the test " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Make some donations using the firefox browser", "\tAs a great prospective Lead SDET\r\n\tI want to make lots of donations to the test " +
                     "charity\r\n\tSo that you guys give me the job", ProgrammingLanguage.CSharp, new string[] {
                         "firefox"});
             testRunner.OnFeatureStart(featureInfo);

@@ -68,6 +68,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\GiveLotsOfMoneyChrome.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiveLotsOfMoneyChrome.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GiveLotsOfMoneyFirefox.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiveLotsOfMoneyFirefox.feature</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\BasePage.Screenshot.cs" />
     <Compile Include="Pages\CommonPage.cs" />
@@ -81,7 +91,7 @@
     <Compile Include="Features\GiveLotsOfMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GiveLotsOfMoney.feature</DependentUpon>
+      <DependentUpon>GiveLotsOfMoneyFirefox.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\Steps.cs" />
     <Compile Include="Utils\SeleniumExtender.cs" />
@@ -92,10 +102,14 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
-    <None Include="Features\GiveLotsOfMoney.feature">
+    <None Include="Features\GiveLotsOfMoneyChrome.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GiveLotsOfMoney.feature.cs</LastGenOutput>
+      <LastGenOutput>GiveLotsOfMoneyChrome.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Features\GiveLotsOfMoneyFirefox.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GiveLotsOfMoneyFirefox.feature.cs</LastGenOutput>
     </None>
     <Compile Include="Pages\IdentityPage.cs" />
     <None Include="runtests.cmd" />

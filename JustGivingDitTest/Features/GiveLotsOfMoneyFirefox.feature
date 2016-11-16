@@ -1,4 +1,5 @@
-﻿Feature: Make some donations
+﻿@firefox
+Feature: Make some donations using the firefox browser
 	As a great prospective Lead SDET
 	I want to make lots of donations to the test charity
 	So that you guys give me the job

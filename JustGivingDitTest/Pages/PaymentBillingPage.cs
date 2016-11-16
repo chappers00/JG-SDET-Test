@@ -59,6 +59,8 @@ namespace JustGivingDitTest.Pages
         public void enterAddressDetails(string country, string houseNumber, string address1, string address2, string town, string county, string postcode)
         {
             new SelectElement(AddressSelector).SelectByText(country);
+            //Wait a second to allow the postcode bit to appear
+            Wait(DurationType.Second, 1);
             //Postcode lookup only seems to come up for certain countries (just UK?), if it does switch to manual entry
             if(isElementVisible(ManualAddressButton))
             {

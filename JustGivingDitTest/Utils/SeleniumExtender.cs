@@ -28,13 +28,24 @@ namespace JustGivingDitTest.Utils
         private IBasePage currentPage;
 
         /// <summary>
-        /// Setups the feature.
+        /// Setups the feature for Firefox.
         /// </summary>
         /// <returns>IWebDriver.</returns>
-        [BeforeFeature()]
-        public static IWebDriver SetupFeature()
+        [BeforeFeature("@firefox")]
+        public static IWebDriver SetupFeatureFF()
         {
             WebDriver = new FirefoxDriver();
+            return WebDriver;
+        }
+
+        /// <summary>
+        /// Setups the feature for Chrome.
+        /// </summary>
+        /// <returns>IWebDriver.</returns>
+        [BeforeFeature("@chrome")]
+        public static IWebDriver SetupFeatureChrome()
+        {
+            WebDriver = new ChromeDriver();
             return WebDriver;
         }
 
