@@ -1,11 +1,13 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 
 namespace JustGivingDitTest.Pages
 {
+    /// <summary>
+    /// Class to represent the "Authentication" page of the Just Giving demo app
+    /// </summary>
     class AuthenticationPage : BasePage
     {
         private readonly IWebDriver driver;

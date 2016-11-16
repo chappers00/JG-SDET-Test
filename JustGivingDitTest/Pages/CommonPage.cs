@@ -35,12 +35,13 @@ namespace JustGivingDitTest.Pages
         /// </summary>
         public void Continue()
         {
+            //Look through all the continue buttons
+            //TODO: there's probably a better CSS selector to use for the active button
             var buttons = this.driver.FindElements(ContinueButtonSelector);
             foreach (var b in buttons)
             {
                 if(b.Displayed) {b.SendKeys(Keys.Enter); break; }
             }
-            
         }
 
         /// <summary>

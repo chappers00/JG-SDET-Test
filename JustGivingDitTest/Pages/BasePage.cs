@@ -299,6 +299,11 @@ namespace JustGivingDitTest.Pages
             Assert.True(isElementVisible(this.webDriver.FindElement(this.pageIdentifier)), "Section is not visible, using selector {0}", this.pageIdentifier);
         }
 
+        /// <summary>
+        /// Wrapper method to give the element an oppertunity to load before trying to type into it.
+        /// </summary>
+        /// <param name="element">The element to wait for / type into</param>
+        /// <param name="keys">The string to send</param>
         public void TypeInElement(IWebElement element, string keys)
         {
             Assert.True(isElementVisible(element), "Element isn't visible {0}", element);

@@ -1,12 +1,13 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using System;
 
 namespace JustGivingDitTest.Pages
 {
+    /// <summary>
+    /// Class to represent the Payment Billing page of the Just Giving demo app
+    /// </summary>
     class PaymentBillingPage : BasePage
     {
         private readonly IWebDriver driver;
@@ -45,10 +46,20 @@ namespace JustGivingDitTest.Pages
         [FindsBy(How = How.ClassName, Using = "manually-enter-address-button")]
         public IWebElement ManualAddressButton { get; set; }
 
-
+        /// <summary>
+        /// Enter the address details manually. Note currently doesn't use the PostCode lookup
+        /// </summary>
+        /// <param name="country"></param>
+        /// <param name="houseNumber"></param>
+        /// <param name="address1"></param>
+        /// <param name="address2"></param>
+        /// <param name="town"></param>
+        /// <param name="county"></param>
+        /// <param name="postcode"></param>
         public void enterAddressDetails(string country, string houseNumber, string address1, string address2, string town, string county, string postcode)
         {
             new SelectElement(AddressSelector).SelectByText(country);
+            //Postcode lookup only seems to come up for certain countries (just UK?), if it does switch to manual entry
             if(isElementVisible(ManualAddressButton))
             {
                 ManualAddressButton.Click();

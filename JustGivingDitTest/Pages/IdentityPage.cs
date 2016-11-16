@@ -6,6 +6,9 @@ using System;
 
 namespace JustGivingDitTest.Pages
 {
+    /// <summary>
+    /// Class to represent the Identity page of the Just Giving demo app
+    /// </summary>
     class IdentityPage : BasePage
     {
         private readonly IWebDriver driver;

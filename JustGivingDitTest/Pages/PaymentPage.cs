@@ -7,6 +7,9 @@ using System;
 
 namespace JustGivingDitTest.Pages
 {
+    /// <summary>
+    /// Class to represent the Payment page of the Just Giving demo app
+    /// </summary>
     class PaymentPage : BasePage
     {
         private readonly IWebDriver driver;
@@ -36,6 +39,14 @@ namespace JustGivingDitTest.Pages
         [FindsBy(How = How.Id, Using = "Payment_NameOnCard")]
         public IWebElement NameOnCard { get; set; }
 
+        /// <summary>
+        /// Fill out all the card details for a payment
+        /// </summary>
+        /// <param name="cardType">Can be any of the parment types in the drop down</param>
+        /// <param name="cardNumber"></param>
+        /// <param name="expMonth"></param>
+        /// <param name="expYear"></param>
+        /// <param name="nameOnCard"></param>
         public void enterPaymentDetails(string cardType, string cardNumber, string expMonth, string expYear, string nameOnCard)
         {
             new SelectElement(CardType).SelectByText(cardType);

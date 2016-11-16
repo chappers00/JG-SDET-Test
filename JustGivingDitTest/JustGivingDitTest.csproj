@@ -78,10 +78,10 @@
     <Compile Include="Pages\ReviewPage.cs" />
     <Compile Include="Pages\PaymentPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Features\GiveLoadsOfMoney.feature.cs">
+    <Compile Include="Features\GiveLotsOfMoney.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GiveLoadsOfMoney.feature</DependentUpon>
+      <DependentUpon>GiveLotsOfMoney.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\Steps.cs" />
     <Compile Include="Utils\SeleniumExtender.cs" />
@@ -93,9 +93,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Features\GiveLoadsOfMoney.feature">
+    <None Include="Features\GiveLotsOfMoney.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GiveLoadsOfMoney.feature.cs</LastGenOutput>
+      <LastGenOutput>GiveLotsOfMoney.feature.cs</LastGenOutput>
     </None>
     <Compile Include="Pages\IdentityPage.cs" />
     <None Include="runtests.cmd" />
