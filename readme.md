@@ -23,6 +23,9 @@ Contains the step definitions
 ### Utils
 Additional selenium functions
 
+## Execution
+I've been using the SpecRun plugin to execute the tests, hopefully it should work with other test runners
+
 
 ## Instructions
 
